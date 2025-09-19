@@ -1,0 +1,10 @@
+# Binaries - these will be built separately
+goproxy-linux
+goproxy-windows.exe
+goproxy-darwin
+goproxy-android
+
+# Go build artifacts
+*.o
+*.a
+*.so
