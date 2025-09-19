@@ -30,6 +30,13 @@ const plugins = [
         desc: '嗷呜适配代理服务',        // 插件描述：提供视频适配代理功能
         active: true                    // 是否激活：true表示启用此插件
     },
+    {
+        name: 'goproxy',                // 插件名称
+        path: 'plugins/goproxy',        // 插件路径
+        params: '-listen :57573 -path /proxy -log -cache-ttl 300 -max-mb 100 -cors-origins *', // 启动参数
+        desc: 'Go代理服务',              // 插件描述：提供m3u8/mp4/ts/http资源代理功能
+        active: false                   // 是否激活：false表示默认禁用此插件
+    },
 ]
 
 export default plugins;
