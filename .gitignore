@@ -150,6 +150,8 @@ dist
 /scripts/python/appMap.txt
 /binary/
 /plugins/
+!/plugins/universal-video-proxy/
+/plugins/universal-video-proxy/proxy-server
 /.claude
 /.plugins.js
 /clipboard.txt
