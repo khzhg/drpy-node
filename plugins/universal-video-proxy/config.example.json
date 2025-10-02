@@ -1,0 +1,31 @@
+{
+  "listen": ":18200",
+  "allowHosts": ["example.com", "v.xxcdn.com"],
+  "cors": { "origins": ["*"] },
+  "sign": { "enabled": false, "secret": "ChangeMeStrongSecret", "ttlSeconds": 600 },
+  "limits": { "maxPlaylistKB": 512, "maxURLLength": 2048 },
+  "rewrite": { "enableM3U8": true, "keepAllVariants": true },
+  "cache": {
+    "m3u8": { "enabled": true, "ttlSeconds": 15, "maxEntries": 300 },
+    "key":   { "enabled": true, "ttlSeconds": 600, "maxEntries": 200 },
+    "ts":    { "enabled": false, "ttlSeconds": 30, "maxEntries": 50 }
+  },
+  "headers": [
+    {
+      "match": "example.com",
+      "useRegex": false,
+      "set": {
+        "User-Agent": "Mozilla/5.0 (UniversalVideoProxy/1.0)",
+        "Referer": "https://example.com/"
+      },
+      "hostRewrite": true
+    }
+  ],
+  "upstream": {
+    "timeoutMs": 15000,
+    "followRedirects": true,
+    "maxRedirects": 5,
+    "httpProxy": "",
+    "socks5": ""
+  }
+}
